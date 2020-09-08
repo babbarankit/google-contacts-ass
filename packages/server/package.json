@@ -19,7 +19,11 @@
   },
   "scripts": {
     "build": "rm -rf ./dist && tsc -p tsconfig.build.json",
-    "start:dev": "NODE_ENV=development nodemon"
+    "start:dev": "NODE_ENV=development nodemon",
+    "test:e2e": "NODE_ENV=test jest --forceExit --detectOpenHandles --config ./tests/jest-e2e.json"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@nestjs/testing": "^7.4.4",
+    "supertest": "^4.0.2"
+  }
 }
