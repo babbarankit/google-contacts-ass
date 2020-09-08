@@ -1,0 +1,17 @@
+apps:
+  - script: yarn start:dev
+    name: 'server'
+    instances: 1
+    cwd: ./packages/server
+  - script: tsc -w
+    name: 'serverWatch'
+    instances: 1
+    cwd: ./packages/server
+  - script: yarn start:dev
+    name: 'web'
+    instances: 1
+    cwd: ./packages/web
+  - script: yarn storybook
+    name: 'storybook'
+    cwd: ./packages/web
+    instances: 1

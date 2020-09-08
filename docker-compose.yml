@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - './:/apps:delegated'
+    ports:
+      - "${WEB_SB_PORT}:6006"
+      - "${SERVER_PORT}:3090"
+      - "${WEB_PORT}:3010"

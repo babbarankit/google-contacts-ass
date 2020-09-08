@@ -26,6 +26,7 @@
   },
   "scripts": {
     "format:quick": "pretty-quick --staged --pattern \"**/*.{ts,tsx,json,graphql}\"",
-    "format": "prettier --write \"**/*.*(ts|tsx)\""
+    "format": "prettier --write \"**/*.*(ts|tsx)\"",
+    "start:dev": "ts-node ./start-dev.ts"
   }
 }
