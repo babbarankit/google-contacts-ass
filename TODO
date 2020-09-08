@@ -8,10 +8,10 @@ Server Todo:
   ☐ Auth Module: Service & Resolver
   ☐ User Service Unit Test
   ☐ Auth Service Unit Test
-  ☐ E2E Test
+  ✔ E2E Test @done(20-09-09 00:45)
 
 Website Todo:
-  ☐ Initial Web Application
+  ✔ Initial Web Application @done(20-09-09 02:56)
   ☐ Web Storybook
   ☐ Storybook - Auth Screen
   ☐ Storybook - Contact Screen
@@ -20,8 +20,8 @@ Website Todo:
   ☐ Backend Integration
 
 DevOps Todo:
-  ☐ Development Docker
-  ☐ Start Dev Script
+  ✔ Development Docker @done(20-09-09 00:46)
+  ✔ Start Dev Script @done(20-09-09 00:47)
   ☐ Web Docker
   ☐ Web Storybook Docker
   ☐ Server Docker
@@ -29,6 +29,8 @@ DevOps Todo:
   ☐ Test Deployment
 
 Misc Todo:
-  ☐ Readme Root
+  ✔ Readme Root @done(20-09-09 00:47)
   ☐ Readme Server
   ☐ Readme Website
+  ✔ Read About OAuth2 @done(20-09-09 02:54)
+  ✔ Test Google API Outside Application (Postman) @done(20-09-09 02:54)
