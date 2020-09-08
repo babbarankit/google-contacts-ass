@@ -1,0 +1,4 @@
+*.d.ts
+**/dist
+**/__generated__
+**/node_modules
