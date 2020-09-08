@@ -1,0 +1,37 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.swp
+.yarn-cache.tgz
+pids
+logs
+results
+tmp
+**/secrets
+# API keys and secrets
+.env.*
+**/*.env
+# Dependency directory
+node_modules
+bower_components
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Ignore built ts files
+dist/**/*
+
+now-required.json
+yarn-error.log
+backups/*
+!backups/.keep
+!sample.env
+!sample.*.env
+yarn-debug.log*
+yarn-error.log*

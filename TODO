@@ -1,0 +1,34 @@
+Development Tasks
+Server Todo:
+  ✔ Initial Packages Required @done(20-09-08 16:31)
+  ☐ Initial Server Application
+  ☐ Env Config
+  ☐ Health Module: Resolver & Controller
+  ☐ User Module: User Service & Resolver
+  ☐ Auth Module: Service & Resolver
+  ☐ User Service Unit Test
+  ☐ Auth Service Unit Test
+  ☐ E2E Test
+
+Website Todo:
+  ☐ Initial Web Application
+  ☐ Web Storybook
+  ☐ Storybook - Auth Screen
+  ☐ Storybook - Contact Screen
+  ☐ Auth Screen Test
+  ☐ User Screen Test
+  ☐ Backend Integration
+
+DevOps Todo:
+  ☐ Development Docker
+  ☐ Start Dev Script
+  ☐ Web Docker
+  ☐ Web Storybook Docker
+  ☐ Server Docker
+  ☐ Deploy Script
+  ☐ Test Deployment
+
+Misc Todo:
+  ☐ Readme Root
+  ☐ Readme Server
+  ☐ Readme Website

@@ -1,0 +1,24 @@
+{
+  "name": "@gc/main",
+  "version": "0.0.0",
+  "description": "Google Contacts App",
+  "author": "Ankit Babbar <babbar.ankit@gmail.com>",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format:quick"
+    }
+  },
+  "devDependencies": {
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "prettier": "^2.1.1",
+    "pretty-quick": "^3.0.0",
+    "ts-jest": "^26.3.0"
+  }
+}
