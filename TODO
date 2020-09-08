@@ -1,9 +1,9 @@
 Development Tasks
 Server Todo:
   ✔ Initial Packages Required @done(20-09-08 16:31)
-  ☐ Initial Server Application
-  ☐ Env Config
-  ☐ Health Module: Resolver & Controller
+  ✔ Initial Server Application @done(20-09-08 23:33)
+  ✔ Env Config @done(20-09-08 23:33)
+  ✔ Health Module: Resolver & Controller @done(20-09-08 23:33)
   ☐ User Module: User Service & Resolver
   ☐ Auth Module: Service & Resolver
   ☐ User Service Unit Test

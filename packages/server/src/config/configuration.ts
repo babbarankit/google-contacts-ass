@@ -18,7 +18,7 @@ export default () => {
   };
   return {
     port: parseInt(process.env.PORT, 10) || 3090,
-    env: process.env.NODE_ENV || 'development',
+    nodeEnv: process.env.NODE_ENV || 'development',
     corsOptions,
   };
 };

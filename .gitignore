@@ -25,12 +25,10 @@ bower_components
 Thumbs.db
 
 # Ignore built ts files
-dist/**/*
-
+packages/server/dist
+packages/web/dist
 now-required.json
 yarn-error.log
-backups/*
-!backups/.keep
 !sample.env
 !sample.*.env
 yarn-debug.log*

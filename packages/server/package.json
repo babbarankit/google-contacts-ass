@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "rm -rf ./dist && tsc -p tsconfig.build.json",
-    "start:dev": "ts-node src/main.ts"
+    "start:dev": "NODE_ENV=development nodemon"
   },
   "devDependencies": {}
 }
