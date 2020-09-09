@@ -20,7 +20,7 @@ const Box = styled.div`
   }
 `;
 
-const AuthForm = () => (
+const AuthForm: React.SFC<{ onClick?: () => void }> = ({ onClick }) => (
   <div style={{ height: '100%', display: 'flex', maxWidth: '90vw', margin: 'auto' }}>
     <Box>
       <div style={{ marginBottom: 12 }}>{googleIcon}</div>
@@ -34,7 +34,7 @@ const AuthForm = () => (
         <Input placeholder='Password' />
       </div>
       <div>
-        <Button>Sign In</Button>
+        <Button onClick={onClick}>Sign In</Button>
       </div>
     </Box>
   </div>

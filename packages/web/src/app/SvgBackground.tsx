@@ -1,4 +1,4 @@
-export default () => (
+const SvgBackground = () => (
   <svg width='1280' height='647' viewBox='0 0 1280 647' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <path
       d='M653.5 1C653.5 1 484.949 48.1897 408 122.5C358.44 170.361 365.803 230.79 307.5 267.5C216.888 324.552 139.6 168.67 64 244.5C4.98332 303.696 137.736 411.621 127.5 496C114.035 607 0 607 0 607'
@@ -42,3 +42,5 @@ export default () => (
     />
   </svg>
 );
+
+export default SvgBackground;
