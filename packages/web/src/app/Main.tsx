@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
   }
   * {
     font-family: "Poppins";
+    letter-spacing: 0.08em;
   }
   ::placeholder {
     font-family: 'Open Sans';
@@ -14,7 +15,6 @@ const GlobalStyle = createGlobalStyle`
     font-weight: normal;
     font-size: 18px;
     line-height: 25px;
-    letter-spacing: 0.08em;
     color: #b6b6b6;
   }
 `;

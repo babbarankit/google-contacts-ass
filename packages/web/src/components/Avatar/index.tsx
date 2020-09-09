@@ -20,8 +20,10 @@ const AvatarStarred: React.SFC<AvatarProps & { isStarred?: boolean }> = ({ isSta
   }
   return (
     <div style={{ position: 'relative' }}>
-      <Avatar {...props} />
-      <div style={{ left: '75%', top: '40%', zIndex: -1, position: 'absolute' }}>{star}</div>
+      <div style={{ position: 'relative', zIndex: 3 }}>
+        <Avatar {...props} />
+      </div>
+      <div style={{ left: '75%', top: '40%', position: 'absolute' }}>{star}</div>
     </div>
   );
 };

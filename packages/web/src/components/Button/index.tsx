@@ -10,7 +10,6 @@ const Button = styled.button<{ type?: 'primary' }>`
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
-  letter-spacing: 0.08em;
   width: 90%;
   @media screen and (min-width: 450px) {
     width: 401px;

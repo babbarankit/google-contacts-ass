@@ -47,7 +47,6 @@ const ContactsHeaderBox = styled.div<{ bgImgSrc: string }>`
   display: flex;
   font-weight: 500;
   font-size: 12px;
-  letter-spacing: 0.08em;
   color: #ffffff;
   position: relative;
   overflow: hidden;
