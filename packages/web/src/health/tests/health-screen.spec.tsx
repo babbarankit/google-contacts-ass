@@ -1,6 +1,6 @@
 import { MockedProvider } from '@apollo/client/testing';
 import { anonymousHealth, HealthScreen } from '../health-screen';
-import { render, within, waitFor, act } from '@testing-library/react';
+import { render, within, act } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 const message = 'Health Test Success!';

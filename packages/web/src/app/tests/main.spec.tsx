@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, act } from '../../testUtils';
 
-import Main from '../main';
+import Main from '../Main';
 const Screen = () => (
   <Main>
     <p>Screen Text</p>

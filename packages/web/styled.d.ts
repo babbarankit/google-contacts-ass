@@ -6,6 +6,12 @@ declare module 'styled-components' {
     borderRadius: string;
     colors: {
       warning: string;
+    },
+    button: {
+      primary: {
+        bg: string;
+      },
+      borderRadius: string;
     }
   }
 }

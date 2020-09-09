@@ -1,3 +1,5 @@
-export default { title: 'Auth Storybook' };
+import { AuthScreen } from './auth-screen';
 
-export const AuthScreen = () => <div>Auth Screen StoryBook</div>;
+export { AuthScreen };
+
+export default { title: 'Auth Screen' };

@@ -1,6 +1,6 @@
 import { gql, useQuery } from '@apollo/client';
 import styled from 'styled-components';
-import Main from './../app/main';
+import Main from '../app/Main';
 
 export const anonymousHealth = gql`
   query AnonymousHealth {
