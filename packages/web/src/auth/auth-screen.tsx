@@ -1,15 +1,14 @@
 import Main from '../app/Main';
 import styled from 'styled-components';
-import SvgBackground from './SvgBackground';
+import SvgBackground from '../app/SvgBackground';
 import { renderToStaticMarkup } from 'react-dom/server';
+import App from '../app/App';
 
-const Wrapper = styled.section`
+const Wrapper = styled.div`
   background: #eff7f9;
-
   display: flex;
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
+  width: 100%;
+  height: 100%;
 `;
 
 export const AuthScreen = () => {
@@ -17,7 +16,9 @@ export const AuthScreen = () => {
   const dataUri = `url("data:image/svg+xml,${svgString}")`;
   return (
     <Main>
-      <Wrapper style={{ backgroundImage: dataUri }}></Wrapper>
+      <App>
+        <Wrapper style={{ backgroundImage: dataUri, background: '#eff7f9' }}></Wrapper>
+      </App>
     </Main>
   );
 };

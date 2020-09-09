@@ -1,9 +1,9 @@
-import Button from './index';
 import StoryApp from '../../app/StoryApp';
-export const Text = () => {
+import Para from './index';
+export const PoppinsText = () => {
   return (
     <StoryApp>
-      <Button>Sign In</Button>
+      <Para>Poppins Font</Para>
     </StoryApp>
   );
 };
