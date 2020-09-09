@@ -1,4 +1,4 @@
-import { AuthScreen } from './auth-screen';
+import { AuthScreen } from './AuthScreen';
 
 export { AuthScreen };
 

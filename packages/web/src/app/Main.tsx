@@ -21,10 +21,10 @@ const GlobalStyle = createGlobalStyle`
 
 const Main: React.SFC = ({ children }) => (
   <ThemeProvider theme={theme}>
-    <main>
+    <section>
       <GlobalStyle />
       {children}
-    </main>
+    </section>
   </ThemeProvider>
 );
 
