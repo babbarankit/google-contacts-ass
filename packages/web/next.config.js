@@ -1,19 +1,15 @@
-const withTM = require('next-transpile-modules')([
-  '@apollo/react-hooks'
-])
+const path = require('path');
+const withReactSvg = require('next-react-svg');
 
-const { nextI18NextRewrites } = require('next-i18next/rewrites')
-const localeSubpaths = {}
-
-module.exports = withTM({
+module.exports = withReactSvg({
+  include: path.resolve(__dirname, 'src/assets/svg'),
   distDir: 'dist/.next',
-  rewrites: async () => nextI18NextRewrites(localeSubpaths),
-  publicRuntimeConfig: {
-    localeSubpaths,
-  },
   typescript: {
     ignoreDevErrors: true,
   },
   poweredByHeader: false,
   compress: false,
+  webpack(config, options) {
+    return config;
+  },
 });

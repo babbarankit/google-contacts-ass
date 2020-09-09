@@ -1,4 +1,6 @@
 import { gql, useQuery } from '@apollo/client';
+import styled from 'styled-components';
+import Main from './../app/main';
 
 export const anonymousHealth = gql`
   query AnonymousHealth {
@@ -6,7 +8,17 @@ export const anonymousHealth = gql`
   }
 `;
 
-const HealthScren = () => {
+const Section = styled.section`
+  background: ${(props) => props.theme.colors.warning};
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+`;
+
+export const HealthScreen = () => {
   const { loading, error, data } = useQuery(anonymousHealth);
 
   if (error) {
@@ -17,10 +29,10 @@ const HealthScren = () => {
   }
 
   return (
-    <section>
-      <p data-test-id='health-status'>{data.anonymousHealth}</p>
-    </section>
+    <Main>
+      <Section>
+        <h1 data-testid='health-status'>{data.anonymousHealth}</h1>
+      </Section>
+    </Main>
   );
-}
-
-export default HealthScren;
+};
