@@ -2,17 +2,37 @@ import ContactsHeader from './ContactsHeader';
 import defaultAvatar from '../assets/avatars';
 import ContactsScreen from './ContactsScreen';
 import $ContactsTableHeaderRow from './ContactsTableHeaderRow';
-import ContactsTableRow from './ContactsTableRow';
+import ContactsTableRow, { ContactsTableRowProps } from './ContactsTableRow';
 import StoryApp from '../app/StoryApp';
 
 export const MockHeader = () => (
-  <ContactsHeader name='Alex Trust' email='alextrust31@gmail.com' profileSrc={defaultAvatar} />
+  <StoryApp>
+    <ContactsHeader name='Alex Trust' email='alextrust31@gmail.com' profileSrc={defaultAvatar} />
+  </StoryApp>
 );
+
+let sampleContact: ContactsTableRowProps = {
+  id: 'id',
+  name: 'Alex Trust',
+  email: 'alextrust31@gmail.com',
+  phoneNo: '+91-9760689747',
+  profileSrc: defaultAvatar,
+};
+
+const contacts = Array.from(new Array(20)).map((_, index) => {
+  let { id, name, ...rest } = sampleContact;
+  return {
+    id: `${id}-${index}`,
+    name: `${name}-${index}`,
+    ...rest,
+  };
+});
 
 export const MockContactsScreen = () => (
   <ContactsScreen
     header={{ name: 'Alex Trust', email: 'alextrust31@gmail.com', profileSrc: defaultAvatar }}
     noOfContacts={170}
+    data={contacts}
   />
 );
 

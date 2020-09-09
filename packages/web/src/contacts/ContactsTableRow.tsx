@@ -29,9 +29,6 @@ const ContactsTableRowWrapper = styled.div`
   overflow: auto;
   margin-bottom: 10px;
   border-radius: 8px;
-  @media screen and (min-width: 800px) {
-    padding-left: 15px;
-  }
   width: 100%;
   font-weight: 500;
   font-size: 14px;
