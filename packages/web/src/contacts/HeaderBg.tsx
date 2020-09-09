@@ -18,8 +18,8 @@ const HeaderBg = () => (
         x2='1271.13'
         y2='-64.0925'
         gradientUnits='userSpaceOnUse'>
-        <stop stop-color='#097AFF' />
-        <stop offset='1' stop-color='#0041E8' />
+        <stop stopColor='#097AFF' />
+        <stop offset='1' stopColor='#0041E8' />
       </linearGradient>
       <linearGradient
         id='paint1_linear'
@@ -28,8 +28,8 @@ const HeaderBg = () => (
         x2='191.153'
         y2='-64.0925'
         gradientUnits='userSpaceOnUse'>
-        <stop stop-color='#097AFF' />
-        <stop offset='1' stop-color='#0041E8' />
+        <stop stopColor='#097AFF' />
+        <stop offset='1' stopColor='#0041E8' />
       </linearGradient>
     </defs>
   </svg>
