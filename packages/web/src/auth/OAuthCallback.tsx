@@ -5,6 +5,7 @@ import { SignInGoogle, SignInGoogleVariables } from './__generated__/SignInGoogl
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
 import App from '../app/App';
+import LoadingComponent from '../components/LoadingComponent';
 
 const OAuth2Callback: FC = ({}) => {
   const router = useRouter();
@@ -31,10 +32,13 @@ const OAuth2Callback: FC = ({}) => {
   });
   useEffect(() => {
     const authCode = (window.location.search.match(/code=([^&]+)/) || [])[1];
-    console.log(authCode);
     mutation({ variables: { authCode } });
   }, []);
-  return <App bgColor='#fbfdfe'></App>;
+  return (
+    <App bgColor='#fbfdfe'>
+      <LoadingComponent />
+    </App>
+  );
 };
 
 export default OAuth2Callback;
