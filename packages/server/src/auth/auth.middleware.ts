@@ -7,7 +7,9 @@ export class AuthMiddleware implements NestMiddleware {
   constructor(private readonly service: AuthService) {}
   async use(req: Request, res: Response, next: Function) {
     try {
-      res.locals.viewer = this.service.getViewer(req);
+      const { viewer, ctx } = this.service.getViewerCtx(req);
+      res.locals.viewer = viewer;
+      res.locals.ctx = ctx;
       next();
     } catch (error) {
       console.error(error);

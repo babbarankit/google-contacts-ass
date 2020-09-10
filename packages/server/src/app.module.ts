@@ -8,6 +8,7 @@ import googleOauthConfig from './auth/google-oauth.config';
 import { join } from 'path';
 import authConfig from './auth/auth.config';
 import { AuthMiddleware } from './auth/auth.middleware';
+import { ContactModule } from './contacts/contact.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { AuthMiddleware } from './auth/auth.middleware';
       envFilePath: ['.env.local', '.env'],
       load: [configuration, googleOauthConfig, authConfig],
     }),
+    ContactModule,
     GraphQLModule.forRootAsync({
       useFactory: (configService: ConfigService) => {
         const isProduction = configService.get('env') === 'production';
@@ -36,6 +38,7 @@ import { AuthMiddleware } from './auth/auth.middleware';
           context: ({ req, res }) => {
             return {
               viewer: res.locals.viewer,
+              ctx: undefined,
               res,
               req,
             };

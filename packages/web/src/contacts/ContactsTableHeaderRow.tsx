@@ -11,7 +11,6 @@ const ContactsTableHeaderRowWrapper = styled.div`
   display: none;
   @media screen and (min-width: 800px) {
     padding-left: 46px;
-    width: 100%;
     flex-basis: 33.3%;
     flex: 1;
     display: flex;

@@ -15,8 +15,8 @@ export class AuthResolver {
   @Mutation((returns) => Boolean)
   async signInGoogle(@Args('authCode') authCode: string, @Context('res') res: Response): Promise<boolean> {
     try {
-      const viewer = await this.service.signInGoogle(authCode);
-      await this.service.setAuthCookies(viewer, res);
+      const { viewer, accessToken } = await this.service.signInGoogle(authCode);
+      await this.service.setAuthCookies(viewer, res, accessToken);
       return true;
     } catch (err) {
       throw new ApolloError(err, 'AuthorizationFailed');

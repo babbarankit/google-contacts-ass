@@ -18,10 +18,16 @@ const TableWrapper = styled.div`
   }
   height: 100%;
   overflow-y: auto;
+  scroll-margin: 50px 0 0 50px;
+  padding-right: 12px;
   &::-webkit-scrollbar {
-    left: -100px;
+    left: 0px;
     width: 5px;
     background: #f4f7ff;
+    box-shadow: inset 0 0 14px 14px transparent;
+    border: solid 4px transparent;
+  }
+  ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 14px 14px transparent;
     border: solid 4px transparent;
   }
