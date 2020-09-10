@@ -4,6 +4,7 @@ import { signInGoogle } from './graphql';
 import { SignInGoogle, SignInGoogleVariables } from './__generated__/SignInGoogle';
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
+import App from '../app/App';
 
 const OAuth2Callback: FC = ({}) => {
   const router = useRouter();
@@ -33,7 +34,7 @@ const OAuth2Callback: FC = ({}) => {
     console.log(authCode);
     mutation({ variables: { authCode } });
   }, []);
-  return <p>{location.search}</p>;
+  return <App bgColor='#fbfdfe'></App>;
 };
 
 export default OAuth2Callback;

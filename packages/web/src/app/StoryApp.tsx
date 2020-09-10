@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Main from './Main';
+import { ToastContainer } from 'react-toastify';
 
 const Section = styled.section`
   justify-content: center;
@@ -14,6 +15,7 @@ const Section = styled.section`
 const StoryApp: React.SFC = ({ children }) => {
   return (
     <Main>
+      <ToastContainer />
       <Section>{children}</Section>
     </Main>
   );

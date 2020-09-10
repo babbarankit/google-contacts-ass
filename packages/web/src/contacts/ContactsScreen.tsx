@@ -1,6 +1,5 @@
 import React from 'react';
 import ContactsHeader, { ContactsHeaderProps } from './ContactsHeader';
-import Main from '../app/Main';
 import App from '../app/App';
 import PageHeading from '../components/PageHeading';
 import ContactsTableRow, { ContactsTableRowProps } from './ContactsTableRow';
@@ -35,18 +34,16 @@ const TableWrapper = styled.div`
 
 const ContactsScreen: React.SFC<ContactsScreenProps> = ({ header: headerProps, noOfContacts, data = [] }) => {
   return (
-    <Main>
-      <App bgColor='#fbfdfe'>
-        <ContactsHeader {...headerProps} />
-        <PageHeading title='Contacts' subTitle={`( ${String(noOfContacts)} )`} />
-        <TableWrapper>
-          <ContactsTableHeaderRow />
-          {data.map((row) => (
-            <ContactsTableRow key={row.id} {...row} />
-          ))}
-        </TableWrapper>
-      </App>
-    </Main>
+    <App bgColor='#fbfdfe'>
+      <ContactsHeader {...headerProps} />
+      <PageHeading title='Contacts' subTitle={`( ${String(noOfContacts)} )`} />
+      <TableWrapper>
+        <ContactsTableHeaderRow />
+        {data.map((row) => (
+          <ContactsTableRow key={row.id} {...row} />
+        ))}
+      </TableWrapper>
+    </App>
   );
 };
 

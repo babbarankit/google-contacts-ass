@@ -18,7 +18,7 @@ const App: React.SFC<{ bgColor: string }> = ({ children, bgColor }) => {
   const bgImgSrc = `url("data:image/svg+xml,${svgString}")`;
   return (
     <Main>
-      <ToastContainer />
+      <ToastContainer autoClose={5000} />
       <Section bgImgSrc={bgImgSrc} bgColor={bgColor}>
         {children}
       </Section>

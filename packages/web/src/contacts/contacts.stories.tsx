@@ -7,7 +7,9 @@ import StoryApp from '../app/StoryApp';
 
 export const MockHeader = () => (
   <StoryApp>
-    <ContactsHeader name='Alex Trust' email='alextrust31@gmail.com' profileSrc={defaultAvatar} />
+    <div style={{ width: '100%', height: '100%' }}>
+      <ContactsHeader name='Alex Trust' email='alextrust31@gmail.com' profileSrc={defaultAvatar} />
+    </div>
   </StoryApp>
 );
 
