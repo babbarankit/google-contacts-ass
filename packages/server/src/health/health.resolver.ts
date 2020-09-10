@@ -6,4 +6,8 @@ export class HealthResolver {
   authenticatedHealth(): string {
     return 'Graphql  Working in Authenticated Mode!';
   }
+  @Query((returns) => String)
+  anonymousHealth(): string {
+    return 'Graphql  Working in Anonymous Mode!';
+  }
 }

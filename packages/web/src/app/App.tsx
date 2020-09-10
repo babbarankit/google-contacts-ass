@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Main from './Main';
 import { renderToStaticMarkup } from 'react-dom/server';
 import SvgBackground from './SvgBackground';
+import { ToastContainer } from 'react-toastify';
 
 const Section = styled.section<{ bgImgSrc: string; bgColor: string }>`
   width: 100vw;
@@ -17,6 +18,7 @@ const App: React.SFC<{ bgColor: string }> = ({ children, bgColor }) => {
   const bgImgSrc = `url("data:image/svg+xml,${svgString}")`;
   return (
     <Main>
+      <ToastContainer />
       <Section bgImgSrc={bgImgSrc} bgColor={bgColor}>
         {children}
       </Section>

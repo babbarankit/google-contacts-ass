@@ -1,0 +1,13 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Query {
+  authenticatedHealth: String!
+  anonymousHealth: String!
+}
+
+type Mutation {
+  getGoogleOAuthUrl: String!
+  signInGoogle(authCode: String!): Boolean!
+}

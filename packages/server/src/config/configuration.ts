@@ -3,7 +3,7 @@ import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.int
 
 export default () => {
   const disableCors = process.env.DISABLE_CORS === 'true';
-  const corsOrigin = process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split('') : [];
+  const corsOrigin = process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : [];
   let allowedOrigins: Array<string | RegExp> | string = corsOrigin.map((origin) => getSiteRegExp(origin));
   if (disableCors) {
     allowedOrigins = [new RegExp(`^(?:https|http)\:\/\/localhost\:[0-9]+$`), ...allowedOrigins];

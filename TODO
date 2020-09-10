@@ -17,10 +17,13 @@ Website Todo:
   ✔ Health Screen Test @done(20-09-09 08:26)
   ✔ Avatar @done(20-09-09 16:46)
   ✔ Storybook - Auth Screen @done(20-09-09 16:46)
-  ☐ Storybook - Contact Screen
+  ✔ Storybook - Contact Screen @done(20-09-10 18:14)
   ☐ Auth Screen Test
   ☐ User Screen Test
-  ☐ Backend Integration
+  ✔ Backend Integration @done(20-09-10 18:14)
+  ☐ Toast Integration
+  ☐ Oauth 2 Redirect
+  ☐ 
 
 DevOps Todo:
   ✔ Development Docker @done(20-09-09 00:46)

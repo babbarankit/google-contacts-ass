@@ -1,18 +1,38 @@
 import React, { FC, useEffect } from 'react';
+import { useMutation } from '@apollo/client';
+import { signInGoogle } from './graphql';
+import { SignInGoogle, SignInGoogleVariables } from './__generated__/SignInGoogle';
+import { useRouter } from 'next/router';
+import { toast } from 'react-toastify';
 
 const OAuth2Callback: FC = ({}) => {
+  const router = useRouter();
+  const [mutation] = useMutation<SignInGoogle, SignInGoogleVariables>(signInGoogle, {
+    onCompleted: (result) => {
+      if (result.signInGoogle) {
+        toast.success('Yay. Logged In!', {
+          position: toast.POSITION.TOP_CENTER,
+        });
+        router.replace('/');
+      } else {
+        toast.error('So Sorry!', {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      }
+    },
+    onError: (error) => {
+      //@TODO: Implement Error Display
+      console.error('Op Not Succesful:', error.message);
+      toast.error('So Sorry!', {
+        position: toast.POSITION.TOP_CENTER,
+      });
+    },
+  });
   useEffect(() => {
-    const code = (location.search.match(/code=([^&]+)/) || [])[1];
-    const state = (location.search.match(/state=([^&]+)/) || [])[1];
-    const qParams = [`code=${code}`, `redirect_uri=${process.env.GOOGLE_REDIRECT_URI}`, `scope=`].join('&');
-    fetch(`/api/auth-from-code/${state}?${qParams}`, {
-      credentials: 'include',
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res))
-      .catch(console.error);
+    const authCode = (window.location.search.match(/code=([^&]+)/) || [])[1];
+    console.log(authCode);
+    mutation({ variables: { authCode } });
   }, []);
-
   return <p>{location.search}</p>;
 };
 

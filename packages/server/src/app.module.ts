@@ -3,19 +3,23 @@ import { HealthModule } from './health/health.module';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import configuration from './config/configuration';
+import { AuthModule } from './auth/auth.module';
+import googleOauthConfig from './auth/google-oauth.config';
+import { join } from 'path';
 
 @Module({
   imports: [
+    AuthModule,
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: ['.env.local', '.env'],
-      load: [configuration],
+      load: [configuration, googleOauthConfig],
     }),
     GraphQLModule.forRootAsync({
       useFactory: (configService: ConfigService) => {
         const isProduction = configService.get('env') === 'production';
         return {
-          autoSchemaFile: true,
+          autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
           cors: false,
           playground: {
             settings: {
