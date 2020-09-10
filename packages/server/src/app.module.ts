@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, MiddlewareConsumer } from '@nestjs/common';
 import { HealthModule } from './health/health.module';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ConfigModule, ConfigService } from '@nestjs/config';
@@ -6,6 +6,8 @@ import configuration from './config/configuration';
 import { AuthModule } from './auth/auth.module';
 import googleOauthConfig from './auth/google-oauth.config';
 import { join } from 'path';
+import authConfig from './auth/auth.config';
+import { AuthMiddleware } from './auth/auth.middleware';
 
 @Module({
   imports: [
@@ -13,7 +15,7 @@ import { join } from 'path';
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: ['.env.local', '.env'],
-      load: [configuration, googleOauthConfig],
+      load: [configuration, googleOauthConfig, authConfig],
     }),
     GraphQLModule.forRootAsync({
       useFactory: (configService: ConfigService) => {
@@ -45,4 +47,9 @@ import { join } from 'path';
     HealthModule,
   ],
 })
-export class AppModule {}
+export class AppModule {
+  configure(consumer: MiddlewareConsumer) {
+    // Require Authenticated User
+    consumer.apply(AuthMiddleware).forRoutes('/graphql');
+  }
+}

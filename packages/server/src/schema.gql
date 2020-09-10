@@ -2,12 +2,22 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Viewer {
+  id: String!
+  name: String
+  phoneNo: String
+  email: String
+  profileSrc: String
+}
+
 type Query {
   authenticatedHealth: String!
   anonymousHealth: String!
+  getViewer: Viewer!
 }
 
 type Mutation {
   getGoogleOAuthUrl: String!
   signInGoogle(authCode: String!): Boolean!
+  logout: Boolean!
 }
