@@ -4,11 +4,19 @@ import ContactsScreen from './ContactsScreen';
 import $ContactsTableHeaderRow from './ContactsTableHeaderRow';
 import ContactsTableRow, { ContactsTableRowProps } from './ContactsTableRow';
 import StoryApp from '../app/StoryApp';
+import { toast } from 'react-toastify';
 
 export const MockHeader = () => (
   <StoryApp>
     <div style={{ width: '100%', height: '100%' }}>
-      <ContactsHeader name='Alex Trust' email='alextrust31@gmail.com' profileSrc={defaultAvatar} />
+      <ContactsHeader
+        name='Alex Trust'
+        email='alextrust31@gmail.com'
+        profileSrc={defaultAvatar}
+        onLogout={() => {
+          toast('Logged Out!');
+        }}
+      />
     </div>
   </StoryApp>
 );
@@ -32,7 +40,14 @@ const contacts = Array.from(new Array(20)).map((_, index) => {
 
 export const MockContactsScreen = () => (
   <ContactsScreen
-    header={{ name: 'Alex Trust', email: 'alextrust31@gmail.com', profileSrc: defaultAvatar }}
+    header={{
+      name: 'Alex Trust',
+      email: 'alextrust31@gmail.com',
+      profileSrc: defaultAvatar,
+      onLogout: () => {
+        toast('Logged Out!');
+      },
+    }}
     noOfContacts={170}
     data={contacts}
   />

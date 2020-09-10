@@ -4,8 +4,14 @@ Server Todo:
   ✔ Initial Server Application @done(20-09-08 23:33)
   ✔ Env Config @done(20-09-08 23:33)
   ✔ Health Module: Resolver & Controller @done(20-09-08 23:33)
-  ☐ User Module: User Service & Resolver
+  ☐ Contacts Module: Service & Resolver
+    ✔ Viewer Gql Context @done(20-09-11 01:41)
+    ☐ Get Google Profile
+    ☐ Get Google Contacts Relationships & create DTO
   ☐ Auth Module: Service & Resolver
+    ✔ Mock Auth @done(20-09-11 01:41)
+    ✔ Logout Auth @done(20-09-11 01:41)
+    ☐ Google Auth Completion
   ☐ User Service Unit Test
   ☐ Auth Service Unit Test
   ✔ E2E Test @done(20-09-09 00:45)
@@ -21,9 +27,9 @@ Website Todo:
   ☐ Auth Screen Test
   ☐ User Screen Test
   ✔ Backend Integration @done(20-09-10 18:14)
-  ☐ Toast Integration
-  ☐ Oauth 2 Redirect
-  ☐ 
+  ✔ Toast Integration @done(20-09-10 22:43)
+  ✔ Oauth 2 Redirect @done(20-09-10 22:43)
+  ☐ Contacts Screen Backend Integration
 
 DevOps Todo:
   ✔ Development Docker @done(20-09-09 00:46)

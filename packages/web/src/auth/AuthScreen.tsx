@@ -6,7 +6,7 @@ import { GetGoogleOAuthUrl } from './__generated__/GetGoogleOAuthUrl';
 import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
-export const AuthScreen = () => {
+export const AuthScreen: React.SFC<{ onLogin?: () => void }> = ({ onLogin }) => {
   useEffect(() => {
     toast.info('Directly Click on Sign In Button!', {
       position: toast.POSITION.BOTTOM_CENTER,
@@ -20,8 +20,6 @@ export const AuthScreen = () => {
       window.location.assign(result.getGoogleOAuthUrl);
     },
     onError: (error) => {
-      //@TODO: Implement Error Display
-      console.error('Op Not Succesful:', error.message);
       toast.error(error.message);
     },
   });
@@ -30,6 +28,7 @@ export const AuthScreen = () => {
       <AuthForm
         onClick={() => {
           mutation();
+          onLogin && onLogin();
         }}
       />
     </App>

@@ -5,9 +5,13 @@ import logoutIcon from '../assets/LogoutIcon';
 import { renderToStaticMarkup } from 'react-dom/server';
 import HeaderBg from './HeaderBg';
 
-export const LogoutButton = () => <button style={{ border: 0, background: 'none' }}>{logoutIcon}</button>;
+export const LogoutButton: React.SFC<{ onClick: () => void }> = ({ onClick }) => (
+  <button style={{ border: 0, background: 'none' }} onClick={onClick}>
+    {logoutIcon}
+  </button>
+);
 
-export interface ContactsHeaderProps {
+export interface ContactsHeaderLeftProps {
   name: string;
   email: string;
   profileSrc: string;
@@ -19,7 +23,7 @@ const ContactsHeaderLeftWrapper = styled.div`
   align-items: center;
 `;
 
-const ContactsHeaderLeft: React.SFC<ContactsHeaderProps> = ({ name, email, profileSrc }) => {
+const ContactsHeaderLeft: React.SFC<ContactsHeaderLeftProps> = ({ name, email, profileSrc }) => {
   return (
     <ContactsHeaderLeftWrapper>
       <Avatar size={54} src={profileSrc} borderSize={2} />
@@ -34,11 +38,13 @@ const ContactsHeaderLeft: React.SFC<ContactsHeaderProps> = ({ name, email, profi
     </ContactsHeaderLeftWrapper>
   );
 };
-
-const ContactsHeaderRight: React.SFC = () => {
+export interface ContactsHeaderRightProps {
+  onLogout: () => void;
+}
+const ContactsHeaderRight: React.SFC<ContactsHeaderRightProps> = ({ onLogout }) => {
   return (
-    <div style={{ paddingRight: 80 }}>
-      <LogoutButton />
+    <div style={{ paddingRight: 80, zIndex: 10 }}>
+      <LogoutButton onClick={onLogout} />
     </div>
   );
 };
@@ -65,7 +71,6 @@ const ContactsHeaderBox = styled.div<{ bgImgSrc: string }>`
 
 const ContactsHeaderBox2 = styled.div<{ bgImgSrc: string }>`
   display: flex;
-
   width: 100%;
   align-items: center;
   justify-content: space-between;
@@ -83,15 +88,15 @@ const ContactsHeaderBox2 = styled.div<{ bgImgSrc: string }>`
     transform: rotate(-2.13deg);
   }
 `;
-
-const ContactsHeader: React.SFC<ContactsHeaderProps> = (props) => {
+export type ContactsHeaderProps = ContactsHeaderLeftProps & ContactsHeaderRightProps;
+const ContactsHeader: React.SFC<ContactsHeaderProps> = ({ onLogout, ...rest }) => {
   const svgString = encodeURIComponent(renderToStaticMarkup(<HeaderBg />));
   const bgImgSrc = `url("data:image/svg+xml,${svgString}")`;
   return (
     <ContactsHeaderBox bgImgSrc={bgImgSrc}>
       <ContactsHeaderBox2 bgImgSrc={bgImgSrc}>
-        <ContactsHeaderLeft {...props} />
-        <ContactsHeaderRight />
+        <ContactsHeaderLeft {...rest} />
+        <ContactsHeaderRight onLogout={onLogout} />
       </ContactsHeaderBox2>
     </ContactsHeaderBox>
   );

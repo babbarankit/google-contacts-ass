@@ -1,5 +1,5 @@
-import { AuthScreen } from '../auth/AuthScreen';
 import { withApollo } from '../lib/with-apollo';
+import IndexScreen from '../app/IndexScreen';
 
-const IndexPage = withApollo(() => <AuthScreen />);
+const IndexPage = withApollo(IndexScreen);
 export default IndexPage;

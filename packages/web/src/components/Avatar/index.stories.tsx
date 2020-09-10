@@ -30,5 +30,3 @@ export const Avatars = () => (
     </div>
   </StoryApp>
 );
-
-export default { title: 'Avatar Stories' };
