@@ -2,6 +2,14 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Contact {
+  id: String!
+  name: String
+  phoneNo: String
+  email: String
+  profileSrc: String
+}
+
 type Viewer {
   id: String!
   name: String
@@ -10,14 +18,33 @@ type Viewer {
   profileSrc: String
 }
 
+type ContactConnection {
+  total: Int!
+  cursor: String
+  edges: [Contact!]
+}
+
 type Query {
+  """Check Authenticated Access"""
   authenticatedHealth: String!
+
+  """Check Health of GraphQL Service"""
   anonymousHealth: String!
+
+  """Get Logged In User Info"""
   getViewer: Viewer!
+
+  """Get Contacts Relationships Connection"""
+  getContactRelationshipsConnection: ContactConnection!
 }
 
 type Mutation {
+  """Get Google OAuth Url"""
   getGoogleOAuthUrl: String!
+
+  """Sign In Using Google OAuth"""
   signInGoogle(authCode: String!): Boolean!
+
+  """Logout User"""
   logout: Boolean!
 }

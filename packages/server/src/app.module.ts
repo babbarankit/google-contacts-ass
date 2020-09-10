@@ -38,7 +38,7 @@ import { ContactModule } from './contacts/contact.module';
           context: ({ req, res }) => {
             return {
               viewer: res.locals.viewer,
-              ctx: undefined,
+              ctx: res.locals.ctx,
               res,
               req,
             };
