@@ -31,7 +31,7 @@ Website Todo:
   ✔ Oauth 2 Redirect @done(20-09-10 22:43)
   ✔ Contacts Screen Backend Integration @done(20-09-11 05:54)
   ✔ Contact Screen Infinte Scroll @done(20-09-11 06:44)
-  ☐ Accessibilty Fixes
+  ✔ Accessibilty Fixes @done(20-09-11 07:23)
 
 DevOps Todo:
   ✔ Development Docker @done(20-09-09 00:46)
@@ -44,7 +44,7 @@ DevOps Todo:
 
 Misc Todo:
   ✔ Readme Root @done(20-09-09 00:47)
-  ☐ Readme Server
-  ☐ Readme Website
+  ✔ Readme Server @done(20-09-11 07:23)
+  ✔ Readme Website @done(20-09-11 07:23)
   ✔ Read About OAuth2 @done(20-09-09 02:54)
   ✔ Test Google API Outside Application (Postman) @done(20-09-09 02:54)

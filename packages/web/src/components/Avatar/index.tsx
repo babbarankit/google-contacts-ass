@@ -5,6 +5,7 @@ export interface AvatarProps {
   src: string;
   size: number;
   borderSize: number;
+  alt?: string;
 }
 const Avatar = styled.img<AvatarProps>`
   width: ${(props) => props.size}px;

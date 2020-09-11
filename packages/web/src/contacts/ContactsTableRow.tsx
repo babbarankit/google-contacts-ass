@@ -67,13 +67,14 @@ const ContactsTableRow: React.FC<ContactsTableRowProps> = ({
   const [hover, setHover] = useState(false);
   return (
     <ContactsTableRowWrapper
+      role='row'
       onMouseEnter={() => {
         setHover(true);
       }}
       onMouseLeave={() => {
         setHover(false);
       }}>
-      <TD md={2}>
+      <TD md={2} role='cell'>
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
           <div className='visible-hover'>
             <Checkbox
@@ -87,18 +88,18 @@ const ContactsTableRow: React.FC<ContactsTableRowProps> = ({
             />
           </div>
           <div>
-            <Avatar size={40} borderSize={1} src={profileSrc} isStarred={isStarred} />
+            <Avatar size={40} borderSize={1} src={profileSrc} isStarred={isStarred} alt={`${name} Profile Pic`} />
           </div>
           <div style={{ paddingLeft: 10 }}>{name}</div>
         </div>
       </TD>
-      <TD>
+      <TD role='cell'>
         <IconLg>
           <AiOutlineMail />
         </IconLg>
         {email}
       </TD>
-      <TD>
+      <TD role='cell'>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div>
             <IconLg>

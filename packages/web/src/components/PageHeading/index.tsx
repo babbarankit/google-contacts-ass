@@ -12,7 +12,7 @@ const Title = styled.h1`
   color: #053ed1;
 `;
 
-const SubTitle = styled.h3`
+const SubTitle = styled.p`
   margin-left: 10px;
   font-size: 16px;
   line-height: 1.5;

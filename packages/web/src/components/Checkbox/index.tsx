@@ -10,7 +10,7 @@ const Checkbox: React.SFC<CheckboxProps> = ({ id, hover, onClick }) => {
   return (
     <CheckboxWrapper className='visible-hover' hover={hover}>
       <input type='checkbox' id={id} onClick={onClick} />
-      <label htmlFor={id}> </label>
+      <label htmlFor={id}></label>
     </CheckboxWrapper>
   );
 };

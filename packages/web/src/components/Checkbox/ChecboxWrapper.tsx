@@ -5,6 +5,7 @@ export const CheckboxWrapper = styled.div<{ hover: boolean }>`
   margin-left: 15px;
   position: relative;
   label {
+    visibility: hidden;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 4px;

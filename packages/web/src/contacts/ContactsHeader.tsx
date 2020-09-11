@@ -26,7 +26,7 @@ const ContactsHeaderLeftWrapper = styled.div`
 const ContactsHeaderLeft: React.SFC<ContactsHeaderLeftProps> = ({ name, email, profileSrc }) => {
   return (
     <ContactsHeaderLeftWrapper>
-      <Avatar size={54} src={profileSrc} borderSize={2} />
+      <Avatar size={54} src={profileSrc} borderSize={2} alt={`${name} Profile Pic`} />
       <div style={{ display: 'flex', flexDirection: 'column', marginLeft: 14 }}>
         <div>
           <span style={{ fontSize: 18 }}>{name}</span>
@@ -49,7 +49,7 @@ const ContactsHeaderRight: React.SFC<ContactsHeaderRightProps> = ({ onLogout }) 
   );
 };
 
-const ContactsHeaderBox = styled.div<{ bgImgSrc: string }>`
+const ContactsHeaderBox = styled.header<{ bgImgSrc: string }>`
   display: flex;
   font-weight: 500;
   font-size: 12px;
@@ -93,7 +93,7 @@ const ContactsHeader: React.SFC<ContactsHeaderProps> = ({ onLogout, ...rest }) =
   const svgString = encodeURIComponent(renderToStaticMarkup(<HeaderBg />));
   const bgImgSrc = `url("data:image/svg+xml,${svgString}")`;
   return (
-    <ContactsHeaderBox bgImgSrc={bgImgSrc}>
+    <ContactsHeaderBox bgImgSrc={bgImgSrc} role='banner'>
       <ContactsHeaderBox2 bgImgSrc={bgImgSrc}>
         <ContactsHeaderLeft {...rest} />
         <ContactsHeaderRight onLogout={onLogout} />

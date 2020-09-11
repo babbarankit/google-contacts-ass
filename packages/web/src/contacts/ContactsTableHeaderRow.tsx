@@ -19,10 +19,10 @@ const ContactsTableHeaderRowWrapper = styled.div`
 `;
 
 const ContactsTableHeaderRow = () => (
-  <ContactsTableHeaderRowWrapper>
-    <TH>NAME</TH>
-    <TH>EMAIL</TH>
-    <TH>PHONE NUMBER</TH>
+  <ContactsTableHeaderRowWrapper role='row'>
+    <TH role='cell'>NAME</TH>
+    <TH role='cell'>EMAIL</TH>
+    <TH role='cell'>PHONE NUMBER</TH>
   </ContactsTableHeaderRowWrapper>
 );
 
