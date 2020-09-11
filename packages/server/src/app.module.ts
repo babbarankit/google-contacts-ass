@@ -15,7 +15,7 @@ import { ContactModule } from './contacts/contact.module';
     AuthModule,
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: ['.env.local', '.env'],
+      envFilePath: ['.env.local', '.env', '.env.production'],
       load: [configuration, googleOauthConfig, authConfig],
     }),
     ContactModule,

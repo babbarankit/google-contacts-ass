@@ -51,6 +51,7 @@
     "start:dev": "nodemon",
     "start": "NODE_ENV=production node dist/server/server/index.js",
     "storybook": "start-storybook -p 6006",
-    "test": "jest"
+    "test": "jest",
+    "build-storybook": "build-storybook"
   }
 }
