@@ -67,8 +67,8 @@ const ContactsScreen: React.SFC<ContactsScreenProps> = ({
       <TableWrapper>
         <div ref={infiniteRef}>
           <ContactsTableHeaderRow />
-          {data.map((row) => (
-            <ContactsTableRow key={row.id} {...row} />
+          {data.map((row, index) => (
+            <ContactsTableRow key={row.id} {...row} isStarred={row.isStarred || index === 0} />
           ))}
         </div>
       </TableWrapper>

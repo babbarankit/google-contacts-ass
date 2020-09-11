@@ -9,8 +9,10 @@ import { toast } from 'react-toastify';
 
 const TD = styled.div<{ md?: number }>`
   flex: 1 0 100%;
+  text-align: center;
   @media screen and (min-width: 450px) {
     flex-basis: ${(props) => (props.md ? props.md * 50 : 1 * 50)}%;
+    text-align: left;
   }
   @media screen and (min-width: 900px) {
     flex: 0 0 33.33%;
@@ -39,11 +41,15 @@ const ContactsTableRowWrapper = styled.div`
   box-shadow: 0px 2px 6px rgba(5, 62, 209, 0.14);
   padding-top: 10px;
   padding-bottom: 10px;
+  margin: 0 10px 10px 10px;
   &:hover {
     cursor: pointer;
     border: 1px solid #4eb4ff;
     box-sizing: border-box;
     box-shadow: 0px 4px 10px rgba(5, 62, 209, 0.19);
+  }
+  @media screen and (min-width: 900px) {
+    margin: 0 0 10px 0;
   }
 `;
 
@@ -101,7 +107,7 @@ const ContactsTableRow: React.FC<ContactsTableRowProps> = ({
       </TD>
       <TD role='cell'>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <div>
+          <div style={{ width: '100%' }}>
             <IconLg>
               <AiOutlinePhone />
             </IconLg>

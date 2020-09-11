@@ -27,10 +27,10 @@ const AuthForm: React.SFC<{ onClick?: () => void }> = ({ onClick }) => (
       <div style={{ marginBottom: 48 }}>
         <p style={{ letterSpacing: '0.08em', fontWeight: 600, fontSize: 20 }}>Sign in with Google</p>
       </div>
-      <div style={{ marginBottom: 24 }}>
+      <div style={{ marginBottom: 24, width: '100%' }}>
         <Input placeholder='Email' />
       </div>
-      <div style={{ marginBottom: 44 }}>
+      <div style={{ marginBottom: 44, width: '100%' }}>
         <Input placeholder='Password' />
       </div>
       <div>
