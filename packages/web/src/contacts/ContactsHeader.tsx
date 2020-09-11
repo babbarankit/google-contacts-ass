@@ -6,7 +6,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import HeaderBg from './HeaderBg';
 
 export const LogoutButton: React.SFC<{ onClick: () => void }> = ({ onClick }) => (
-  <button style={{ border: 0, background: 'none' }} onClick={onClick}>
+  <button style={{ border: 0, background: 'none', cursor: 'pointer' }} onClick={onClick}>
     {logoutIcon}
   </button>
 );

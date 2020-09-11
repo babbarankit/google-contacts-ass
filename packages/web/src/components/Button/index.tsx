@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const Button = styled.button<{ type?: 'primary' }>`
+  cursor: pointer;
   background: ${(props) => props.theme.button.primary.bg};
   height: 60px;
   max-width: 70%;

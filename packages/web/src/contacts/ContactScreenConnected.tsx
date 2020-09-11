@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useQuery } from '@apollo/client';
+import { useQuery, NetworkStatus } from '@apollo/client';
 import { getContactRelationshipsConnection } from './graphql';
 import {
   GetContactRelationshipsConnection,
@@ -13,13 +13,13 @@ import ContactsScreen from './ContactsScreen';
 
 const ContactScreenConnected: React.SFC = () => {
   const { viewerData, onLogout } = useContext(ViewerContext);
-  const { loading, error, data } = useQuery<
+  const { error, data, fetchMore, networkStatus } = useQuery<
     GetContactRelationshipsConnection,
     GetContactRelationshipsConnectionVariables
   >(getContactRelationshipsConnection, {
     notifyOnNetworkStatusChange: true,
   });
-  if (loading) {
+  if (networkStatus === NetworkStatus.loading) {
     return (
       <App bgColor='#fbfdfe'>
         <LoadingComponent />
@@ -33,10 +33,32 @@ const ContactScreenConnected: React.SFC = () => {
       </App>
     );
   }
-  const { total, edges } = data.getContactRelationshipsConnection;
+  const { total, edges, cursor } = data.data;
   return (
     <section>
-      <ContactsScreen header={{ ...viewerData, onLogout }} data={edges} noOfContacts={total} />
+      <ContactsScreen
+        header={{ ...viewerData, onLogout }}
+        data={edges}
+        noOfContacts={total}
+        hasMore={!!cursor}
+        onLoadMore={async () => {
+          if (networkStatus !== NetworkStatus.fetchMore && cursor) {
+            await fetchMore({
+              updateQuery: (previousResult: any, { fetchMoreResult }) => {
+                return {
+                  data: {
+                    ...fetchMoreResult.data,
+                    edges: [...previousResult.data.edges, ...fetchMoreResult.data.edges],
+                  },
+                };
+              },
+              variables: {
+                cursor,
+              },
+            });
+          }
+        }}
+      />
     </section>
   );
 };

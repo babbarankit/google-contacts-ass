@@ -5,6 +5,7 @@ import Avatar from './../components/Avatar';
 import { useState } from 'react';
 import Checkbox from '../components/Checkbox';
 import { trashIcon } from '../assets/trashIcon';
+import { toast } from 'react-toastify';
 
 const TD = styled.div<{ md?: number }>`
   flex: 1 0 100%;
@@ -75,7 +76,15 @@ const ContactsTableRow: React.FC<ContactsTableRowProps> = ({
       <TD md={2}>
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
           <div className='visible-hover'>
-            <Checkbox hover={hover} id={id} />
+            <Checkbox
+              hover={hover}
+              id={id}
+              onClick={(event: any) => {
+                if (event.target.checked) {
+                  toast('No Behaviour Yet!');
+                }
+              }}
+            />
           </div>
           <div>
             <Avatar size={40} borderSize={1} src={profileSrc} isStarred={isStarred} />
@@ -97,7 +106,17 @@ const ContactsTableRow: React.FC<ContactsTableRowProps> = ({
             </IconLg>
             {phoneNo}
           </div>
-          <div style={{ marginRight: 25 }}>{hover && trashIcon}</div>
+          <div style={{ marginRight: 25 }}>
+            {hover && (
+              <button
+                style={{ border: 0, background: 'none' }}
+                onClick={() => {
+                  toast('No Behaviour Yet!');
+                }}>
+                {trashIcon}
+              </button>
+            )}
+          </div>
         </div>
       </TD>
     </ContactsTableRowWrapper>

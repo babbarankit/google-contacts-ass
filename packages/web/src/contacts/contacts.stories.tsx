@@ -5,6 +5,7 @@ import $ContactsTableHeaderRow from './ContactsTableHeaderRow';
 import ContactsTableRow, { ContactsTableRowProps } from './ContactsTableRow';
 import StoryApp from '../app/StoryApp';
 import { toast } from 'react-toastify';
+import { useState } from 'react';
 
 export const MockHeader = () => (
   <StoryApp>
@@ -38,20 +39,28 @@ const contacts = Array.from(new Array(20)).map((_, index) => {
   };
 });
 
-export const MockContactsScreen = () => (
-  <ContactsScreen
-    header={{
-      name: 'Alex Trust',
-      email: 'alextrust31@gmail.com',
-      profileSrc: defaultAvatar,
-      onLogout: () => {
-        toast('Logged Out!');
-      },
-    }}
-    noOfContacts={170}
-    data={contacts}
-  />
-);
+export const MockContactsScreen = () => {
+  const [hasMore, setHasMore] = useState(true);
+  return (
+    <ContactsScreen
+      hasMore={hasMore}
+      onLoadMore={async () => {
+        toast('Call Load More!');
+        setHasMore(false);
+      }}
+      header={{
+        name: 'Alex Trust',
+        email: 'alextrust31@gmail.com',
+        profileSrc: defaultAvatar,
+        onLogout: () => {
+          toast('Logged Out!');
+        },
+      }}
+      noOfContacts={170}
+      data={contacts}
+    />
+  );
+};
 
 export const MockContactsRow = () => (
   <StoryApp>

@@ -5,11 +5,14 @@ import PageHeading from '../components/PageHeading';
 import ContactsTableRow, { ContactsTableRowProps } from './ContactsTableRow';
 import styled from 'styled-components';
 import ContactsTableHeaderRow from './ContactsTableHeaderRow';
+import useInfiniteScroll from 'react-infinite-scroll-hook';
 
 export interface ContactsScreenProps {
   header: ContactsHeaderProps;
   noOfContacts: number;
   data: ContactsTableRowProps[];
+  hasMore: boolean;
+  onLoadMore: () => Promise<void>;
 }
 
 const TableWrapper = styled.div`
@@ -21,6 +24,7 @@ const TableWrapper = styled.div`
   scroll-margin: 50px 0 0 50px;
   padding-right: 12px;
   &::-webkit-scrollbar {
+    display: block;
     left: 0px;
     width: 5px;
     background: #f4f7ff;
@@ -38,16 +42,35 @@ const TableWrapper = styled.div`
   }
 `;
 
-const ContactsScreen: React.SFC<ContactsScreenProps> = ({ header: headerProps, noOfContacts, data = [] }) => {
+const ContactsScreen: React.SFC<ContactsScreenProps> = ({
+  header: headerProps,
+  noOfContacts,
+  data = [],
+  hasMore,
+  onLoadMore,
+}) => {
+  const [loading, setLoading] = React.useState(false);
+  const infiniteRef = useInfiniteScroll<HTMLDivElement>({
+    loading,
+    hasNextPage: hasMore,
+    onLoadMore: async () => {
+      setLoading(true);
+      await onLoadMore();
+      setLoading(false);
+    },
+    scrollContainer: 'parent',
+  });
   return (
     <App bgColor='#fbfdfe'>
       <ContactsHeader {...headerProps} />
       <PageHeading title='Contacts' subTitle={`( ${String(noOfContacts)} )`} />
       <TableWrapper>
-        <ContactsTableHeaderRow />
-        {data.map((row) => (
-          <ContactsTableRow key={row.id} {...row} />
-        ))}
+        <div ref={infiniteRef}>
+          <ContactsTableHeaderRow />
+          {data.map((row) => (
+            <ContactsTableRow key={row.id} {...row} />
+          ))}
+        </div>
       </TableWrapper>
     </App>
   );

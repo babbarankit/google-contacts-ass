@@ -8,6 +8,9 @@ const GlobalStyle = createGlobalStyle`
   * {
     font-family: "Poppins";
     letter-spacing: 0.08em;
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
   ::placeholder {
     font-family: 'Open Sans';

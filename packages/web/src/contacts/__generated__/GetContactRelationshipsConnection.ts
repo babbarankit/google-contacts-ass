@@ -7,7 +7,7 @@
 // GraphQL query operation: GetContactRelationshipsConnection
 // ====================================================
 
-export interface GetContactRelationshipsConnection_getContactRelationshipsConnection_edges {
+export interface GetContactRelationshipsConnection_data_edges {
   __typename: "Contact";
   id: string;
   name: string | null;
@@ -16,18 +16,18 @@ export interface GetContactRelationshipsConnection_getContactRelationshipsConnec
   profileSrc: string | null;
 }
 
-export interface GetContactRelationshipsConnection_getContactRelationshipsConnection {
+export interface GetContactRelationshipsConnection_data {
   __typename: "ContactConnection";
   total: number;
   cursor: string | null;
-  edges: GetContactRelationshipsConnection_getContactRelationshipsConnection_edges[] | null;
+  edges: GetContactRelationshipsConnection_data_edges[] | null;
 }
 
 export interface GetContactRelationshipsConnection {
   /**
    * Get Contacts Relationships Connection
    */
-  getContactRelationshipsConnection: GetContactRelationshipsConnection_getContactRelationshipsConnection;
+  data: GetContactRelationshipsConnection_data;
 }
 
 export interface GetContactRelationshipsConnectionVariables {

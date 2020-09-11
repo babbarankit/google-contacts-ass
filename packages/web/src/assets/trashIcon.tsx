@@ -1,7 +1,37 @@
 export const trashIcon = (
-  <svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
+  <svg width='19' height='20' viewBox='0 0 19 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <path
-      d='M12.5877 1.22699H14.7014L13.5862 14.009C13.5341 14.6368 13.0083 15.1192 12.3784 15.117H3.73436C3.10627 15.1167 2.58328 14.635 2.53136 14.009L1.69635 3.94621'
+      d='M1 5.52332L17.54 2.00774'
+      stroke='#053ED1'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M10.5413 1.02613L6.99832 1.77901C6.68409 1.8451 6.40912 2.0336 6.23415 2.30284C6.05919 2.57209 5.99864 2.89993 6.06588 3.21391L6.31711 4.39597L12.2242 3.13983L11.973 1.95857C11.9068 1.64503 11.7188 1.37062 11.4503 1.19574C11.1818 1.02086 10.8548 0.959843 10.5413 1.02613Z'
+      stroke='#053ED1'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M8.24646 14.8896V8.85049'
+      stroke='#053ED1'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M11.8701 14.8896V8.85049'
+      stroke='#053ED1'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M14.5877 5.22699H16.7014L15.5862 18.009C15.5341 18.6368 15.0083 19.1192 14.3784 19.117H5.73436C5.10627 19.1167 4.58328 18.635 4.53136 18.009L3.69635 7.94621'
       stroke='#053ED1'
       strokeWidth='1.5'
       strokeLinecap='round'
