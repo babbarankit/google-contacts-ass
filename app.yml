@@ -1,0 +1,9 @@
+apps:
+  - script: yarn start
+    name: 'server'
+    instances: 1
+    cwd: ./packages/server
+  - script: yarn start
+    name: 'web'
+    instances: 1
+    cwd: ./packages/web

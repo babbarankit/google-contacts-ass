@@ -1,0 +1,15 @@
+*
+!./yarn.lock
+!./package.json
+!./packages/server/dist
+!./packages/server/.env
+!./packages/server/.env.production
+!./packages/server/package.json
+!./packages/web/dist
+!./packages/web/*.env
+!./packages/web/.env.production
+!./packages/web/.babelrc
+!./packages/web/next.config.js
+!./packages/web/public
+!./packages/storybook-static
+!./packages/web/package.json

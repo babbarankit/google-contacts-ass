@@ -23,6 +23,7 @@
   "scripts": {
     "build": "rm -rf ./dist && tsc -p tsconfig.build.json",
     "start:dev": "NODE_ENV=development nodemon",
+    "start": "TZ=IST NODE_ENV=production node dist/main.js",
     "test:e2e": "NODE_ENV=test jest --forceExit --detectOpenHandles --config ./tests/jest-e2e.json"
   },
   "devDependencies": {
