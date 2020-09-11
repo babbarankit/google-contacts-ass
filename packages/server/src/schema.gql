@@ -35,7 +35,7 @@ type Query {
   getViewer: Viewer!
 
   """Get Contacts Relationships Connection"""
-  getContactRelationshipsConnection: ContactConnection!
+  getContactRelationshipsConnection(cursor: String, limit: Int): ContactConnection!
 }
 
 type Mutation {

@@ -8,5 +8,8 @@
 // ====================================================
 
 export interface GetGoogleOAuthUrl {
+  /**
+   * Get Google OAuth Url
+   */
   getGoogleOAuthUrl: string;
 }

@@ -17,5 +17,8 @@ export interface GetViewer_getViewer {
 }
 
 export interface GetViewer {
+  /**
+   * Get Logged In User Info
+   */
   getViewer: GetViewer_getViewer;
 }

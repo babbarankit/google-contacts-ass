@@ -4,14 +4,14 @@ Server Todo:
   ✔ Initial Server Application @done(20-09-08 23:33)
   ✔ Env Config @done(20-09-08 23:33)
   ✔ Health Module: Resolver & Controller @done(20-09-08 23:33)
-  ☐ Contacts Module: Service & Resolver
+  ✔ Contacts Module: Service & Resolver @done(20-09-11 05:54)
     ✔ Viewer Gql Context @done(20-09-11 01:41)
-    ☐ Get Google Profile
-    ☐ Get Google Contacts Relationships & create DTO
-  ☐ Auth Module: Service & Resolver
+    ✔ Get Google Profile @done(20-09-11 05:54)
+    ✔ Get Google Contacts Relationships & create DTO @done(20-09-11 05:54)
+  ✔ Auth Module: Service & Resolver @done(20-09-11 05:54)
     ✔ Mock Auth @done(20-09-11 01:41)
     ✔ Logout Auth @done(20-09-11 01:41)
-    ☐ Google Auth Completion
+    ✔ Google Auth Completion @done(20-09-11 05:54)
   ☐ User Service Unit Test
   ☐ Auth Service Unit Test
   ✔ E2E Test @done(20-09-09 00:45)
@@ -29,7 +29,9 @@ Website Todo:
   ✔ Backend Integration @done(20-09-10 18:14)
   ✔ Toast Integration @done(20-09-10 22:43)
   ✔ Oauth 2 Redirect @done(20-09-10 22:43)
-  ☐ Contacts Screen Backend Integration
+  ✔ Contacts Screen Backend Integration @done(20-09-11 05:54)
+  ☐ Contact Screen Infinte Scroll
+  ☐ Accessibilty Fixes
 
 DevOps Todo:
   ✔ Development Docker @done(20-09-09 00:46)

@@ -8,5 +8,8 @@
 // ====================================================
 
 export interface Logout {
+  /**
+   * Logout User
+   */
   logout: boolean;
 }

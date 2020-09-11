@@ -8,6 +8,9 @@
 // ====================================================
 
 export interface SignInGoogle {
+  /**
+   * Sign In Using Google OAuth
+   */
   signInGoogle: boolean;
 }
 

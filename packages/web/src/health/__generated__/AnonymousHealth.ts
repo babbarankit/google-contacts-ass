@@ -8,5 +8,8 @@
 // ====================================================
 
 export interface AnonymousHealth {
+  /**
+   * Check Health of GraphQL Service
+   */
   anonymousHealth: string;
 }

@@ -57,10 +57,16 @@ export class ContactsService {
    *
    * @param access_token Access Token
    */
-  async getGoogleProfileRelationshipData(access_token: string): Promise<ContactConnection> {
+  async getGoogleProfileRelationshipData(
+    access_token: string,
+    pageSize: number = 20,
+    pageToken?: string,
+  ): Promise<ContactConnection> {
     try {
-      const profileUrl =
-        'https://people.googleapis.com/v1/people/me/connections?pageSize=20&personFields=names,emailAddresses,photos,phoneNumbers';
+      let profileUrl = `https://people.googleapis.com/v1/people/me/connections?pageSize=${pageSize}&personFields=names,emailAddresses,photos,phoneNumbers`;
+      if (pageToken) {
+        profileUrl = `${profileUrl}&pageToken=${pageToken}`;
+      }
       const profile_res = await fetch(profileUrl, {
         method: 'GET',
         headers: new Headers({
